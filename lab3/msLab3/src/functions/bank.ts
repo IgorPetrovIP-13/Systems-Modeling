@@ -5,40 +5,80 @@ import { Job } from "../classes/Job.js";
 import { DistributionEnum, RoutingEnum } from "../utils/enums.js";
 import { Route } from "../classes/Route.js";
 import { BankModel } from "../task2Bank/Bank.js";
+import {
+  CASHIER_1_CHANNELS_NUM,
+  CASHIER_1_DELAY_DEVIATION,
+  CASHIER_1_DELAY_MEAN,
+  CASHIER_1_DELTA_TO_SWITCH,
+  CASHIER_1_NAME,
+  CASHIER_2_CHANNELS_NUM,
+  CASHIER_2_DELAY_DEVIATION,
+  CASHIER_2_DELAY_MEAN,
+  CASHIER_2_DELTA_TO_SWITCH,
+  CASHIER_2_NAME,
+  CREATOR_DELAY,
+  CREATOR_INITIAL_T_NEXT,
+  CREATOR_NAME,
+  DESPOSE_NAME,
+} from "../constants/bankConstants.js";
 
 export function bank(): void {
-    const create = new Creator("Create 1", 0.5, 0.1);
-    const cashierWindow1 = new CheckoutProcess("Cashier 1", 1, 0.3, 1, 2);
-    const cashierWindow2 = new CheckoutProcess("Cashier 2", 1, 0.3, 1, 2);
-    const dispose = new Despose("Despose 1");
+  const create = new Creator(
+    CREATOR_NAME,
+    CREATOR_DELAY,
+    CREATOR_INITIAL_T_NEXT
+  );
 
-    cashierWindow1.initializeChannelsWithJobs(1);
-    cashierWindow1.initializeQueueWithJobs(2);
-    cashierWindow1.setNeighbors(cashierWindow2);
+  const cashier1 = new CheckoutProcess(
+    CASHIER_1_NAME,
+    CASHIER_1_DELAY_MEAN,
+    CASHIER_1_DELAY_DEVIATION,
+    CASHIER_1_CHANNELS_NUM,
+    CASHIER_1_DELTA_TO_SWITCH
+  );
 
-    cashierWindow2.initializeChannelsWithJobs(1);
-    cashierWindow2.initializeQueueWithJobs(2);
-    cashierWindow2.setNeighbors(cashierWindow1);
+  const cashier2 = new CheckoutProcess(
+    CASHIER_2_NAME,
+    CASHIER_2_DELAY_MEAN,
+    CASHIER_2_DELAY_DEVIATION,
+    CASHIER_2_CHANNELS_NUM,
+    CASHIER_2_DELTA_TO_SWITCH
+  );
 
-    create.setDistribution(DistributionEnum.EXPONENTIAL);
-    cashierWindow1.setDistribution(DistributionEnum.EXPONENTIAL);
-    cashierWindow1.setDelayMean(0.3);
+  const despose = new Despose(DESPOSE_NAME);
 
-    cashierWindow2.setDistribution(DistributionEnum.EXPONENTIAL);
-    cashierWindow2.setDelayMean(0.3);
+  cashier1.initializeChannelsWithJobs(1);
+  cashier1.initializeQueueWithJobs(2);
+  cashier1.setNeighbors(cashier2);
 
-    cashierWindow1.setMaxQueueSize(3);
-    cashierWindow2.setMaxQueueSize(3);
+  cashier2.initializeChannelsWithJobs(1);
+  cashier2.initializeQueueWithJobs(2);
+  cashier2.setNeighbors(cashier1);
 
-    create.setRouting(RoutingEnum.BY_PRIORITY);
-    create.addRoutes(
-        new Route(cashierWindow1, 0.5, 1, (job: Job) => cashierWindow2.getQueueSize() < cashierWindow1.getQueueSize()),
-        new Route(cashierWindow2, 0.5, 0)
-    );
+  create.setDistribution(DistributionEnum.EXPONENTIAL);
+  cashier1.setDistribution(DistributionEnum.EXPONENTIAL);
+  cashier1.setDelayMean(0.3);
 
-    cashierWindow1.addRoutes(new Route(dispose));
-    cashierWindow2.addRoutes(new Route(dispose));
+  cashier2.setDistribution(DistributionEnum.EXPONENTIAL);
+  cashier2.setDelayMean(0.3);
 
-    const model = new BankModel(create, cashierWindow1, cashierWindow2, dispose);
-    model.simulate(1000);
+  cashier1.setMaxQueueSize(3);
+  cashier2.setMaxQueueSize(3);
+
+  create.setRouting(RoutingEnum.BY_PRIORITY);
+  create.addRoutes(
+    new Route(
+      cashier1,
+      0.5,
+      1,
+      (_: Job) => cashier2.getQueueSize() < cashier1.getQueueSize()
+    ),
+    new Route(cashier2, 0.5, 0)
+  );
+
+  cashier1.addRoutes(new Route(despose));
+  cashier2.addRoutes(new Route(despose));
+
+  const model = new BankModel(create, cashier1, cashier2, despose);
+  model.simulate(1000);
 }

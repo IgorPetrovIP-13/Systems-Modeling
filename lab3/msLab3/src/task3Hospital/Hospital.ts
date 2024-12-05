@@ -23,11 +23,10 @@ export class Hospital extends Model {
   }
 
   override printResult(): void {
-    console.log("\n-------------RESULTS-------------");
     this.printillInfo();
-    console.log("\n-----------STATS------------");
+    console.log("\n-----------RESULTS------------");
     console.log(
-      "Mean time in system (processed): " + this.getMeanTimeInSystem()
+      "Mean time in system: " + this.getMeanTimeInSystem()
     );
     console.log(
       "Mean laboratory arrival interval: " + this.getLaboratoryArrivalInterval()
