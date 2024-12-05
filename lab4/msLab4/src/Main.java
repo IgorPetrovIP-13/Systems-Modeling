@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class Main {
 
-    // Task 6
     public static void main(String[] args) {
         Create c = new Create(2.0);
         Process p1 = new Process(6.0, 3);
