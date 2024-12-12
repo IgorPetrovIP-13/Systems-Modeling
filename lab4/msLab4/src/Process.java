@@ -1,100 +1,120 @@
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Process extends Element {
     private int queue, maxqueue, failure;
-    private double meanQueue, busyTime;
-    private final int machinesNum;
-    private final double[] nextMachines;
-    private ArrayList<Element> nextElements;
+    private double meanQueue = 0.0;
+    private double workTime = 0.0;
+    private final ArrayList<Channel> channels = new ArrayList<>();
 
-    public Process(double delay, int machinesNum) {
+    public Process(double delay, int channelsNum) {
         super(delay);
         queue = 0;
         maxqueue = Integer.MAX_VALUE;
-        meanQueue = 0.0;
-        busyTime = 0.0;
-        nextElements = new ArrayList<>();
-        this.machinesNum = machinesNum;
-        this.nextMachines = new double[machinesNum];
-        for (int i = 0; i < machinesNum; i++) {
-            nextMachines[i] = Double.MAX_VALUE;
+        for (int i = 0; i < channelsNum; i++) {
+            channels.add(new Channel());
         }
     }
 
     @Override
     public void inAct() {
-        int freeMachine = getFreeMachine();
-        if (freeMachine != -1) {
-            nextMachines[freeMachine] = super.getTcurr() + super.getDelay();
-            super.setState(1);
+        super.inAct();
+        var freeChannel = getFreeChannel();
+        if (freeChannel != -1) {
+            channels.get(freeChannel).setState(1);
+            channels.get(freeChannel).setTnext(super.getTcurr() + super.getDelay());
+            return;
+        }
+        if (getQueue() < getMaxqueue()) {
+            setQueue(getQueue() + 1);
         } else {
-            if (getQueue() < getMaxqueue()) {
-                setQueue(getQueue() + 1);
-            } else {
-                failure++;
-            }
+            failure++;
         }
-        double minTnext = Double.MAX_VALUE;
-        for (double tnext : nextMachines) {
-            if (tnext < minTnext) {
-                minTnext = tnext;
-            }
-        }
-        super.setTnext(minTnext);
+
     }
 
     @Override
     public void outAct() {
-        super.outAct();
+        var chansWithMinTnext = getChannelsWithMinTnext();
+        setQuantity(getQuantity() + chansWithMinTnext.size());
 
-        double minValue = Double.MAX_VALUE;
+        for (int index : chansWithMinTnext) {
+            channels.get(index).setTnext(Double.MAX_VALUE);
+            channels.get(index).setState(0);
+        }
 
-        int nextMachine = -1;
-
-        for (int i = 0; i < machinesNum; i++) {
-            if (nextMachines[i] < minValue) {
-                minValue = nextMachines[i];
-                nextMachine = i;
+        for (int i = 0; i < chansWithMinTnext.size(); i++) {
+            var nextElement = getNextElement();
+            if (nextElement != null) {
+                nextElement.inAct();
             }
         }
 
-        if (nextMachine != -1) {
-            nextMachines[nextMachine] = Double.MAX_VALUE;
-            if (getQueue() > 0) {
-                setQueue(getQueue() - 1);
-                nextMachines[nextMachine] = super.getTcurr() + super.getDelay();
-            } else {
-                boolean isAllFree = true;
-                for (double tnext : nextMachines) {
-                    if (tnext != Double.MAX_VALUE) {
-                        isAllFree = false;
-                        break;
-                    }
-                }
-                if (isAllFree) {
-                    super.setState(0);
-                }
-            }
-            if (!nextElements.isEmpty()) {
-                Element nextElement = getNextRandomElement();
-                if (nextElement != null) {
-                    nextElement.inAct();
-                }
+        if (getQueue() > 0) {
+            var newTasks = Math.min(getQueue(), chansWithMinTnext.size());
+            setQueue(getQueue() - newTasks);
+            for (int i = 0; i < newTasks; i++) {
+                channels.get(chansWithMinTnext.get(i)).setState(1);
+                channels.get(chansWithMinTnext.get(i)).setTnext(super.getTcurr() + super.getDelay());
             }
         }
-        double minTnext = Double.MAX_VALUE;
-        for (double tnext : nextMachines) {
-            if (tnext < minTnext) {
-                minTnext = tnext;
+    }
+
+    @Override
+    public int getState() {
+        int state = 0;
+        for (Channel channel : channels) {
+            state |= channel.getState();
+        }
+        return state;
+    }
+
+    @Override
+    public double getTnext() {
+        double tnext = Double.MAX_VALUE;
+        for (Channel channel : channels) {
+            if (channel.getTnext() < tnext) {
+                tnext = channel.getTnext();
             }
         }
-        super.setTnext(minTnext);
+        return tnext;
+    }
+
+    private int getFreeChannel() {
+        for (int i = 0; i < channels.size(); i++) {
+            if (channels.get(i).getState() == 0) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    private ArrayList<Integer> getChannelsWithMinTnext() {
+        var minTnext = getTnext();
+        var channelsWithMinTnext = new ArrayList<Integer>();
+        for (int i = 0; i < channels.size(); i++) {
+            if (channels.get(i).getTnext() == minTnext) {
+                channelsWithMinTnext.add(i);
+            }
+        }
+        return channelsWithMinTnext;
+    }
+
+    @Override
+    public void printInfo() {
+        super.printInfo();
+        System.out.println("failure = " + this.getFailure() + " worktime = " + this.workTime);
+    }
+
+    @Override
+    public void doStatistics(double delta) {
+        meanQueue = getMeanQueue() + queue * delta;
+        workTime = getWorkTime() + getState() * delta;
     }
 
     public int getFailure() {
         return failure;
     }
+
     public int getQueue() {
         return queue;
     }
@@ -102,47 +122,37 @@ public class Process extends Element {
     public void setQueue(int queue) {
         this.queue = queue;
     }
+
     public int getMaxqueue() {
         return maxqueue;
     }
-    public void setMaxqueue(int maxqueue) {
-        this.maxqueue = maxqueue;
-    }
-    @Override
-    public void printInfo() {
-        super.printInfo();
-        System.out.println("failure = " + this.getFailure());
-    }
-    @Override
-    public void doStatistics(double delta) {
-        meanQueue = getMeanQueue() + queue * delta;
-        if (getState() == 1) {
-            busyTime += delta;
-        }
-    }
+
     public double getMeanQueue() {
         return meanQueue;
     }
 
-    public double getMeanBusyTime(double totalTime) {
-        return busyTime / totalTime;
+    public double getWorkTime() {
+        return workTime;
     }
 
-    private int getFreeMachine() {
-        int freeI = -1;
-        for (int i = 0; i < machinesNum; i++) {
-            if (nextMachines[i] == Double.MAX_VALUE) {
-                return i;
-            }
+    static class Channel {
+        private int state = 0;
+        private double tnext = Double.MAX_VALUE;
+
+        public int getState() {
+            return state;
         }
-        return freeI;
-    }
 
-    private Element getNextRandomElement() {
-        return nextElements.get(new Random().nextInt(nextElements.size()));
-    }
+        public void setState(int state) {
+            this.state = state;
+        }
 
-    public void addNextElement(Element element) {
-        nextElements.add(element);
+        public double getTnext() {
+            return tnext;
+        }
+
+        public void setTnext(double tnext) {
+            this.tnext = tnext;
+        }
     }
 }

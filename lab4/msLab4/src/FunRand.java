@@ -3,49 +3,53 @@ import java.util.Random;
 public class FunRand {
     /**
      * Generates a random value according to an exponential
-     distribution
+     * distribution
      *
-     * @param timeMean mean value
+     * @param delayMean mean value
      * @return a random value according to an exponential
-    distribution
+     * distribution
      */
-    public static double Exp(double timeMean) {
+    public static double Exp(double delayMean) {
         double a = 0;
         while (a == 0) {
             a = Math.random();
         }
-        a = -timeMean * Math.log(a);
+        a = -delayMean * Math.log(a);
+
         return a;
     }
+
     /**
      * Generates a random value according to a uniform
-     distribution
+     * distribution
      *
-     * @param timeMin
-     * @param timeMax
+     * @param Min min value
+     * @param Max max value
      * @return a random value according to a uniform distribution
      */
-    public static double Unif(double timeMin, double timeMax) {
+    public static double Unif(double Min, double Max) {
         double a = 0;
         while (a == 0) {
             a = Math.random();
         }
-        a = timeMin + a * (timeMax - timeMin);
+        a = Min + a * (Max - Min);
+
         return a;
     }
+
     /**
      * Generates a random value according to a normal (Gauss)
-     distribution
+     * distribution
      *
-     * @param timeMean
-     * @param timeDeviation
-     * @return a random value according to a normal (Gauss)
-    distribution
+     * @param delayMean mean value
+     * @param delayDev standard deviation of normal distribution
+     * @return a random value according to a normal (Gauss) distribution
      */
-    public static double Norm(double timeMean, double timeDeviation) {
+    public static double Norm(double delayMean, double delayDev) {
         double a;
         Random r = new Random();
-        a = timeMean + timeDeviation * r.nextGaussian();
+        a = delayMean + delayDev * r.nextGaussian();
+
         return a;
     }
 }

@@ -49,6 +49,7 @@ export function hospital(): void {
     REGISTRATION_PROCESS_DELAY_MEAN,
     REGISTRATION_CHANNELS_NUM
   );
+	
   const wardsTransfer = new Process(
     WARDS_TRANSFER_PROCESS_NAME,
     WARDS_TRANSFER_PROCESS_DELAY_MEAN,
