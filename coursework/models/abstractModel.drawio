@@ -1,0 +1,223 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="24.7.17">
+  <diagram name="Страница — 1" id="E65EOJoz5677E7be3JpQ">
+    <mxGraphModel dx="2336" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="QdlKe-RexnLaaCbiWvur-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="230" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="QdlKe-RexnLaaCbiWvur-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="290" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-2" value="Літак підлітає до аеропорту" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="290" y="245" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QdlKe-RexnLaaCbiWvur-3" target="QdlKe-RexnLaaCbiWvur-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-3" value="Початок" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="110" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QdlKe-RexnLaaCbiWvur-6" target="QdlKe-RexnLaaCbiWvur-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="160" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-72" value="Так" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="QdlKe-RexnLaaCbiWvur-9">
+          <mxGeometry x="0.2571" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QdlKe-RexnLaaCbiWvur-6" target="QdlKe-RexnLaaCbiWvur-18">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="160" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-73" value="Ні" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="QdlKe-RexnLaaCbiWvur-16">
+          <mxGeometry x="0.0426" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-6" value="Є вільні смуги?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="340" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QdlKe-RexnLaaCbiWvur-11" target="QdlKe-RexnLaaCbiWvur-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-11" value="Літак займає смугу" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="420" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QdlKe-RexnLaaCbiWvur-13" target="QdlKe-RexnLaaCbiWvur-29">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="659.9999999999998" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-13" value="Літак обслуговується на посадковій смузі" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="540" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QdlKe-RexnLaaCbiWvur-18" target="QdlKe-RexnLaaCbiWvur-43">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-18" value="Літак встає у чергу" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry y="480" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QdlKe-RexnLaaCbiWvur-23" target="QdlKe-RexnLaaCbiWvur-27">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-80" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-66" value="Так" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="QdlKe-RexnLaaCbiWvur-25">
+          <mxGeometry x="-0.1944" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="QdlKe-RexnLaaCbiWvur-23" target="QdlKe-RexnLaaCbiWvur-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-63" value="Ні" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="QdlKe-RexnLaaCbiWvur-62">
+          <mxGeometry x="-0.8257" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-23" value="Час очікування&amp;nbsp;&lt;div&gt;літака &amp;gt; 70хв&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-160" y="700" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QdlKe-RexnLaaCbiWvur-27" target="QdlKe-RexnLaaCbiWvur-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-27" value="Літак йде на дозаправку" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-160" y="830" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-28" value="Аеропорт втрачає 1000 +- 200" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-160" y="940" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QdlKe-RexnLaaCbiWvur-29" target="QdlKe-RexnLaaCbiWvur-35">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="800" y="685" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-71" value="Ні" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="QdlKe-RexnLaaCbiWvur-36">
+          <mxGeometry x="-0.4345" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QdlKe-RexnLaaCbiWvur-29" target="QdlKe-RexnLaaCbiWvur-34">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="480" y="685" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-70" value="Так" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="QdlKe-RexnLaaCbiWvur-38">
+          <mxGeometry x="-0.4759" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-29" value="Літак очікував&lt;br&gt;у черзі?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="650" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QdlKe-RexnLaaCbiWvur-34" target="QdlKe-RexnLaaCbiWvur-40">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="480" y="1040" />
+              <mxPoint x="390" y="1040" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-34" value="Компанія літака платить 1500 +- 100 за посадку" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="750" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QdlKe-RexnLaaCbiWvur-35" target="QdlKe-RexnLaaCbiWvur-40">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="800" y="1040" />
+              <mxPoint x="390" y="1040" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-35" value="Компанія літака платить 2000 за посадку" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="750" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-40" value="Кінець" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="1080" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QdlKe-RexnLaaCbiWvur-43" target="QdlKe-RexnLaaCbiWvur-23">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-80" y="655" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-64" value="Ні" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="QdlKe-RexnLaaCbiWvur-44">
+          <mxGeometry x="0.0053" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QdlKe-RexnLaaCbiWvur-43" target="QdlKe-RexnLaaCbiWvur-56">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="719.9999999999998" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="230" y="655" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-65" value="Так" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="QdlKe-RexnLaaCbiWvur-54">
+          <mxGeometry x="-0.4993" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-43" value="Літак був на &lt;br&gt;дозаправці?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry y="620" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-46" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-80" y="1000" as="sourcePoint" />
+            <mxPoint x="360" y="410" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-80" y="1020" />
+              <mxPoint x="360" y="1020" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QdlKe-RexnLaaCbiWvur-56" target="QdlKe-RexnLaaCbiWvur-59">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="QdlKe-RexnLaaCbiWvur-56" target="QdlKe-RexnLaaCbiWvur-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="805" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-69" value="Ні" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="QdlKe-RexnLaaCbiWvur-68">
+          <mxGeometry x="-0.9395" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-56" value="Час очікування&amp;nbsp;&lt;div&gt;літака &amp;gt; 140хв&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="770" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QdlKe-RexnLaaCbiWvur-59" target="QdlKe-RexnLaaCbiWvur-40">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="230" y="1040" />
+              <mxPoint x="390" y="1040" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QdlKe-RexnLaaCbiWvur-59" value="Літак йде на посадку на інший аеропорт&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="910" width="160" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
